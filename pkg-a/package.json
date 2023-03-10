@@ -1,0 +1,24 @@
+{
+  "name": "@eduardoborges/pkg-a",
+  "version": "0.0.1",
+  "type": "module",
+  "source": "src/index.ts",
+  "private": false,
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "prepare": "npm run build",
+    "dev": "rollup -c -w"
+  },
+  "devDependencies": {
+    "@types/react": "18.0.28",
+    "rollup-plugin-dts": "^5.2.0",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^4.1.3"
+  }
+}
