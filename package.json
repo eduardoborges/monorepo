@@ -1,0 +1,21 @@
+{
+  "name": "monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "lerna publish"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  
+  "devDependencies": {
+    "lerna": "^6.5.1"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ]
+}
