@@ -19,7 +19,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "release": "npx semantic-release --tag-format='@eduardoborges/pkg-b@${version}'"
+    "release": "npx semantic-release"
   },
   "devDependencies": {
     "@eduardoborges/pkg-a": "*",

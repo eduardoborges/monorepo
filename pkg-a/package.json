@@ -19,7 +19,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "release": "npx semantic-release --tag-format='@eduardoborges/pkg-a@${version}'"
+    "release": "npx semantic-release"
   },
   "devDependencies": {
     "@types/react": "18.0.28",
