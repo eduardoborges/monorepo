@@ -18,9 +18,8 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "prepare": "npm run build",
     "dev": "rollup -c -w",
-    "release":"npx semantic-release --dry-run"
+    "release":"npx semantic-release"
   },
   "devDependencies": {
     "@types/react": "18.0.28",

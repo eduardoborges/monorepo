@@ -13,6 +13,7 @@
   "scripts": {
     "dev": "./scripts.sh dev",
     "publish": "./scripts.sh publish",
+    "prepare": "npm run build -ws",
     "release": "npm run release --if-exists -ws"
   },
   "devDependencies": {
