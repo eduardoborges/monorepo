@@ -1,4 +1,6 @@
 {
+  "name": "monorepo",
+  "version": "0.0.0",
   "engines": {
     "node": ">=14.0.0",
     "npm": ">=7.0.0"
@@ -9,10 +11,18 @@
     "app-a"
   ],
   "scripts": {
-    "dev": "./scripts.sh dev",
-    "publish": "./scripts.sh publish"
+    "dev": "scripts.sh dev",
+    "publish": "scripts.sh publish"
   },
   "devDependencies": {
-    "concurrently": "7.6.0"
+    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.7",
+    "@semantic-release/npm": "^9.0.2",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "concurrently": "7.6.0",
+    "semantic-release": "^20.1.1",
+    "semantic-release-monorepo": "^7.0.5"
   }
 }

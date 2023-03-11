@@ -1,0 +1,16 @@
+{
+  "branches": ["main"],
+  "baseBranch": "main",
+  "tagFormat": "${version}",
+  "extends": "semantic-release-monorepo",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    ["@semantic-release/npm", {
+      "npmPublish": true
+    }],
+    "@semantic-release/git"
+  ]
+}
