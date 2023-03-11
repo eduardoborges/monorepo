@@ -1,6 +1,6 @@
 {
   "name": "@eduardoborges/pkg-a",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": false,
   "type": "module",
   "source": "./src/index.ts",
@@ -19,7 +19,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "release":"npx semantic-release"
+    "release": "npx semantic-release"
   },
   "devDependencies": {
     "@types/react": "18.0.28",
