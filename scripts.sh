@@ -38,7 +38,7 @@ function dev(){
 }
 
 function release(){
-  npm run -ws release --if-exists;
+  npm run release --if-exists -ws;
 }
 
 # Run
