@@ -1,7 +1,7 @@
 {
   "branches": ["main"],
   "baseBranch": "main",
-  "tagFormat": "${version}",
+  "tagFormat": "${name}@${version}",
   "extends": "semantic-release-monorepo",
   "plugins": [
     "@semantic-release/commit-analyzer",
