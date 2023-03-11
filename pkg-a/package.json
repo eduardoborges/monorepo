@@ -1,14 +1,21 @@
 {
   "name": "@eduardoborges/pkg-a",
   "version": "0.0.1",
-  "type": "module",
-  "source": "src/index.ts",
   "private": false,
+  "type": "module",
+  "source": "./src/index.ts",
   "exports": {
     "require": "./dist/index.cjs",
     "default": "./dist/index.js"
   },
   "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "rollup -c",
     "prepare": "npm run build",
