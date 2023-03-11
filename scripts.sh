@@ -37,9 +37,5 @@ function dev(){
     --prefix "[{name}]"
 }
 
-function release(){
-  npm run release --if-exists -ws;
-}
-
 # Run
 $1

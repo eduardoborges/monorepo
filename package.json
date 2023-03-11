@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "./scripts.sh dev",
     "publish": "./scripts.sh publish",
-    "release": "./scripts.sh release"
+    "release": "npm run release --if-exists -ws"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.2",
