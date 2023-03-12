@@ -21,8 +21,11 @@
     "dev": "rollup -c -w",
     "release": "npx semantic-release"
   },
-  "devDependencies": {
+  "dependencies": {
     "@eduardoborges/pkg-a": "*",
+    "react": "18.0.0"
+  },
+  "devDependencies": {
     "@types/react": "18.0.28",
     "rollup-plugin-dts": "^5.2.0",
     "rollup-plugin-esbuild": "^5.0.0",

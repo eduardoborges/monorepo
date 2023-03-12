@@ -2,13 +2,12 @@
   "name": "monorepo",
   "version": "0.0.0",
   "engines": {
-    "node": ">=14.0.0",
+    "node": ">=16.0.0",
     "npm": ">=7.0.0"
   },
   "workspaces": [
-    "pkg-a",
-    "pkg-b",
-    "app-a"
+    "packages/*",
+    "apps/*"
   ],
   "scripts": {
     "dev": "./scripts.sh dev",

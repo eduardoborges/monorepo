@@ -1,9 +1,10 @@
 
 function publish(){
-  workspaces=$(jq -r '.workspaces[]' package.json)
+  # Get all workspaces
+  workspaces=$(ls packages)
 
-  echo "🏗️  Building all packages..."
-  npm run build -ws
+  # echo "🏗️  Building all packages..."
+  # npm run build -ws
 
   # Check if the user is logged in to npm
   if ! npm whoami > /dev/null; then
@@ -11,31 +12,32 @@ function publish(){
     exit 1
   fi
 
-  # List packages to publish
-  echo "The following packages will be published:"
   for workspace in $workspaces; do
     echo "\n⬆️  Publishing $workspace"
-    cd $workspace
-    # Remove the dry-run flag to actually publish the package
-    npm publish --dry-run >> /dev/null;
-    cd ..
+    cd packages/$workspace
+    npm publish --dry-run; # dry run
     echo "\n✅ Published"
+    cd ../../
   done
-
-  echo "\n📦 ✅ All packages published successfully"
 }
 
 # Path: scripts/dev.sh
 function dev(){
-  ## TODO: Automate this script
-  npx concurrently --kill-others-on-fail \
-    "npm run dev -w pkg-a --if-exists" \
-    "npm run dev -w pkg-b --if-exists" \
-    "npm run dev -w app-a --if-exists" \
-    --names "pkg-a,pkg-b,app-a" \
-    -c "blue,cyan,yellow" \
-    --prefix "[{name}]"
-}
+  workspaces=$(ls packages)
 
+  cmd="npx concurrently --kill-others --success first"
+  cmd="$cmd --prefix-colors 'bgBlue.bold,bgCyan.bold,bgGreen.bold,bgYellow.bold,bgRed.bold'";
+  names=""
+  for workspace in $workspaces; do
+    cmd="$cmd 'npm run dev -w packages/$workspace' ";
+    if([ -z "$names" ]) then
+      names="$workspace";
+    else
+      names="$names,$workspace";
+    fi
+  done
+  cmd="$cmd --names '$names'"
+  eval $cmd
+}
 # Run
-$1
+eval $1
